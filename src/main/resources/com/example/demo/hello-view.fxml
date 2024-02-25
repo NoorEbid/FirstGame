@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Arc?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainAnchor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+
+   <children>
+      <BorderPane layoutX="14.5">
+         <center>
+            <AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0">
+         
+               <children>
+                  <GridPane fx:id="maingrid" gridLinesVisible="true" layoutX="-27.0" layoutY="33.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="790.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="185.1999755859375" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="252.5999755859375" minWidth="10.0" prefWidth="163.39998779296874" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.60003662109375" minWidth="10.0" prefWidth="147.60000610351562" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.199951171875" minWidth="10.0" prefWidth="141.19997558593752" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="158.00002441406252" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="171.1999938964844" minHeight="10.0" prefHeight="125.59999389648436" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="164.80001220703122" minHeight="10.0" prefHeight="107.20000610351562" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="148.19998779296878" minHeight="10.0" prefHeight="109.60001831054686" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="127.59998779296876" minHeight="10.0" prefHeight="98.19997558593747" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="113.19999999999999" minHeight="10.0" prefHeight="87.9999877929688" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Arc fx:id="myArc" fill="#e5ff00" length="270.0" radiusX="57.0" radiusY="52.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="-10.0" left="10.0" />
+                           </GridPane.margin>
+                        </Arc>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <BorderPane prefHeight="170.0" prefWidth="772.0" BorderPane.alignment="CENTER">
+               <center>
+                  <ProgressBar fx:id="health" prefHeight="18.0" prefWidth="604.0" progress="0.0" BorderPane.alignment="CENTER" />
+               </center>
+               <top>
+                  <Label fx:id="pointCounter" prefHeight="5.0" prefWidth="166.0" text="Label" textFill="RED" BorderPane.alignment="CENTER">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+               </top>
+               <left>
+                  <VBox prefHeight="343.0" prefWidth="154.0" BorderPane.alignment="TOP_RIGHT">
+                     <children>
+                        <ImageView fx:id="robotImageView" fitHeight="111.0" fitWidth="142.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/C:/Users/NoorE/OneDrive/Documents/Mycode/java/first%20game/demo/src/main/assets/statRobot.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Stationarry Minion: 30 Points" />
+                        <Button fx:id="statButton" onMouseClicked="#openPopupWindow" text="Click Me">
+                           <VBox.margin>
+                              <Insets bottom="10" left="10" right="10" top="10" />
+                           </VBox.margin>
+                        </Button>
+   
+                        </children>
+   
+                     </VBox>
+               </left>
+               <right>
+                  <VBox prefHeight="398.0" prefWidth="22.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Path finding Minion: 100 Points" />
+                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="94.0" text="Click Me">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </right>
+            </BorderPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
