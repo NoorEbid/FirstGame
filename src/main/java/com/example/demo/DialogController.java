@@ -54,18 +54,6 @@ public class DialogController implements Initializable {
         currentCol = 0;
     }
 
-//    public DialogController(ImageView robotImageView) {
-//        this.robotImageView = robotImageView;
-//        // Initialize currentRow and currentCol with default values
-//        currentRow = 0;
-//        currentCol = 0;
-//    }
-//
-//    public DialogController(ImageView robotImageView, HelloController helloController) {
-//        this.robotImageView = robotImageView;
-//        this.helloController = helloController;
-//    }
-
     public DialogController(GridPane maingrid) {
         this.mainGridDialog = maingrid;
 //        System.out.println("1");
@@ -97,7 +85,7 @@ public class DialogController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        System.out.println("2");
+        this.mainGridDialog = SharedModel.getMainGrid();
         myChoiceBox.getItems().addAll(1, 2, 3, 4, 5);
         myChoiceBox1.getItems().addAll(1, 2, 3, 4, 5);
 //        myChoiceBox.setOnAction(this::getNumbers);
@@ -105,51 +93,27 @@ public class DialogController implements Initializable {
         // Initialize currentRow and currentCol with default values
         currentRow = 0;
         currentCol = 0;
-        System.out.println(counter);
-        this.counter = 10;
-
 //        System.out.println("This is the main");
 //        System.out.println(this.mainGridDialog);
     }
 
-//    public void getNumbers(ActionEvent event) {
-//        if (myChoiceBox.getValue() != null && myChoiceBox1.getValue() != null) {
-//            int row = myChoiceBox.getValue();
-//            int col = myChoiceBox1.getValue();
-//            myLabel.setText("You want your robot to be at row " + row + " and column " + col);
-//            moveRobotToRowAndCol(row, col);
-//        }
-//    }
-
     public void moveRobotToRowAndCol(int row, int col) {
 
         ImageView imageView = new ImageView();
-        Image image = new Image("file:/C:/Users/NoorE/OneDrive/Documents/Mycode/java/first%20game/demo/src/main/assets/statRobot.png");
+        Image image = new Image("C:\\Users\\adame\\Documents\\Coding\\noor_coding\\java\\src\\main\\assets\\statRobot.png");
         imageView.setImage(image);
+        imageView.setFitWidth(50);
+        imageView.setFitHeight(50);
         GridPane.setColumnIndex(imageView, col);
         GridPane.setRowIndex(imageView, row);
-//        System.out.println("Below is the girdpane");
-//        System.out.println(this.mainGridDialog);
-//        mainGridDialog.getChildren().add(imageView);
-//        if (robotImageView != null) {
-//            // Assuming the VBox is the parent of the robotImageView
-//            VBox parentVBox = (VBox) robotImageView.getParent().getParent().getParent();
-//            BorderPane borderPane = (BorderPane) parentVBox.getParent();
-//            GridPane gridPane = (GridPane) borderPane.getCenter(); // Assuming GridPane is in the center
-//
-//            // Assuming the VBox containing the ImageView is at row 0 in the GridPane
-//            GridPane.setColumnIndex(robotImageView, col);
-//            GridPane.setRowIndex(robotImageView, row);
-//
-//            currentRow = row;
-//            currentCol = col;
-//        }
+        System.out.println("Below is the girdpane");
+        System.out.println(this.mainGridDialog);
+        mainGridDialog.getChildren().add(imageView);
     }
 
     @FXML
     private void handleSubmitCordsButtonClick(ActionEvent event) {
         if (myChoiceBox.getValue() != null && myChoiceBox1.getValue() != null) {
-            System.out.println(counter);
             int row = myChoiceBox.getValue();
             int col = myChoiceBox1.getValue();
             myLabel.setText("You want your robot to be at row " + row + " and column " + col);
@@ -159,10 +123,4 @@ public class DialogController implements Initializable {
         }
     }
 
-    public void setGridPaneRef(GridPane maingrid) {
-        this.mainGridDialog = maingrid;
-//        System.out.println(this.mainGridDialog);
-//        System.out.println(mainGridDialog.getChildren());
-//        System.out.println("It worked!");
-    }
 }

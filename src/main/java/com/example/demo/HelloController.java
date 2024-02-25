@@ -379,6 +379,7 @@ public class HelloController implements Initializable {
     private void buttonPurchase(){
         if (pointsCollected >= 1){
             pointsCollected = pointsCollected - 1;
+            SharedModel.setMainGrid(maingrid);
 //            System.out.println("Success");
 //            System.out.println(this.dialogpop);
             dialogpop.showDialog();
@@ -435,25 +436,4 @@ public class HelloController implements Initializable {
         Stage stage = (Stage) maingrid.getScene().getWindow();
         stage.close();
     }
-
-    @FXML
-    private void showPopUpMenu(MouseEvent event) {
-        System.out.println("Button clicked!");
-
-        // Create a new popup menu
-//        PopupMenu popupMenu = new PopupMenu();
-
-        // Create menu items
-        MenuItem menuItem1 = new MenuItem("Option 1");
-        MenuItem menuItem2 = new MenuItem("Option 2");
-
-
-    }
-
-
-
-
-
-
-
 }
