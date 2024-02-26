@@ -100,7 +100,8 @@ public class DialogController implements Initializable {
     public void moveRobotToRowAndCol(int row, int col) {
 
         ImageView imageView = new ImageView();
-        Image image = new Image("C:\\Users\\adame\\Documents\\Coding\\noor_coding\\java\\src\\main\\assets\\statRobot.png");
+        Image image = new Image("C:\\Users\\NoorE\\OneDrive\\Documents\\Mycode\\java\\first game\\demo\\src\\main\\assets\\statRobot.png");
+//        Image image = new Image("C:\\Users\\adame\\Documents\\Coding\\noor_coding\\java\\src\\main\\assets\\statRobot.png");
         imageView.setImage(image);
         imageView.setFitWidth(50);
         imageView.setFitHeight(50);
